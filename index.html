@@ -70,7 +70,7 @@
             <script>
                 const candidati = [
                     "Affatato Claudia Antonia", 
-                    "Colella Nunzia detto Nancy", 
+                    "Colella Nunzia detta Nancy", 
                     "De Filippo Laura", 
                     "Delmedico Luisiana", 
                     "Dicintio Giovanni", 
@@ -88,15 +88,18 @@
                 ];
 
                 const formatFileName = (name) => {
+                    // Toglie "detto" o "detta" per il nome del file
                     return name.split(/ dett[oa]/i)[0].trim().toLowerCase().replace(/ /g, '_');
                 };
 
                 const formatDisplayName = (name) => {
-                    const regex = / dett[oa] (.+)/i;
+                    // Cerca "detto" o "detta" (case insensitive)
+                    const regex = / (dett[oa]) (.+)/i;
                     if (regex.test(name)) {
                         const match = name.match(regex);
                         const baseName = name.split(/ dett[oa]/i)[0];
-                        return `${baseName} <span class="italic font-bold text-slate-500 text-sm">detto ${match[1]}</span>`;
+                        // match[1] contiene la parola esatta usata (detto o detta)
+                        return `${baseName} <span class="italic font-bold text-slate-500 text-sm italic">${match[1]} ${match[2]}</span>`;
                     }
                     return name;
                 };
