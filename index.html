@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prima Capurso - Trasparenza Elettorale 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -87,16 +87,16 @@
                     "Scamarcia Antonio Pasquale"
                 ];
 
-                // Funzione per pulire il nome dal "detto..." per il file
                 const formatFileName = (name) => {
-                    return name.split(" detto")[0].toLowerCase().replace(/ /g, '_');
+                    return name.split(/ dett[oa]/i)[0].trim().toLowerCase().replace(/ /g, '_');
                 };
 
-                // Funzione per formattare il nome visualizzato con il "detto..." in corsivo
                 const formatDisplayName = (name) => {
-                    if (name.includes(" detto ")) {
-                        const parts = name.split(" detto ");
-                        return `${parts[0]} <span class="italic font-medium text-slate-500 text-sm">detto ${parts[1]}</span>`;
+                    const regex = / dett[oa] (.+)/i;
+                    if (regex.test(name)) {
+                        const match = name.match(regex);
+                        const baseName = name.split(/ dett[oa]/i)[0];
+                        return `${baseName} <span class="italic font-bold text-slate-500 text-sm">detto ${match[1]}</span>`;
                     }
                     return name;
                 };
