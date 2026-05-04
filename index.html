@@ -12,12 +12,12 @@
         .logo-gradient { background: linear-gradient(135deg, #0077c8 0%, #004a99 100%); }
         .btn-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .btn-hover:hover { transform: translateY(-2px) scale(1.02); }
-        /* Stile per rendere il sottotitolo più piccolo */
         .subtitle-sindaco { font-size: 0.75em; font-weight: 700; }
     </style>
 </head>
 <body class="text-slate-800">
 
+    <!-- Hero Section -->
     <header class="logo-gradient text-white py-12 px-4 shadow-lg border-b-4 border-blue-900">
         <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
             <img src="logo.webp" alt="Logo" class="w-44 h-44 rounded-full bg-white p-1 mb-6 shadow-2xl border-4 border-white">
@@ -31,6 +31,7 @@
 
     <main class="max-w-5xl mx-auto px-4 -mt-8 pb-20">
         
+        <!-- Candidato Sindaco Highlight -->
         <section class="bg-white rounded-3xl p-8 shadow-2xl mb-12 border-t-8 border-blue-600">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="flex items-center gap-6">
@@ -47,18 +48,19 @@
                     <a href="/files/pepe_giusi_cv.pdf" 
                        title="Scarica curriculum vitae" 
                        class="btn-hover flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
-                        <i data-lucide="file-text" class="w-5 h-5"></i> Scarica CV
+                        <i data-lucide="file-text" class="w-5 h-5"></i> CV
                     </a>
                     <a href="/files/pepe_giusi_ccg.pdf" 
                        title="Scarica certificato del casellario giudiziale" 
                        class="btn-hover flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
-                        <i data-lucide="shield-check" class="w-5 h-5"></i> Scarica CCG
+                        <i data-lucide="gavel" class="w-5 h-5"></i> CCG
                     </a>
                 </div>
             </div>
         </section>
 
-        <div class="mb-8 flex items-center justify-between">
+        <!-- Consiglieri Section -->
+        <div class="mb-8 flex items-center justify-between px-2">
             <h3 class="text-2xl font-black uppercase text-slate-900 flex items-center gap-3">
                 <i data-lucide="users" class="text-blue-600"></i> Lista Consiglieri
             </h3>
@@ -67,31 +69,56 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <script>
                 const candidati = [
-                    "Affatato Claudia Antonia", "Colella Nunzia detta Nancy", "De Filippo Laura", 
-                    "Delmedico Luisiana", "Dicintio Giovanni", "Diprizio Piero", 
-                    "Divella Ilaria", "Fiore Vincenzo", "Giannelli Giuseppe", 
-                    "Macchia Quaranta Renata", "Pannarale Alessandro", "Pepe Michael detto Maicol", 
-                    "Petruzzelli Pietro detto Piero", "Salzo Antonio", "Santorsola Stefania", "Scamarcia Antonio Pasquale"
+                    "Affatato Claudia Antonia", 
+                    "Colella Nunzia detto Nancy", 
+                    "De Filippo Laura", 
+                    "Delmedico Luisiana", 
+                    "Dicintio Giovanni", 
+                    "Diprizio Piero", 
+                    "Divella Ilaria", 
+                    "Fiore Vincenzo", 
+                    "Giannelli Giuseppe", 
+                    "Macchia Quaranta Renata", 
+                    "Pannarale Alessandro", 
+                    "Pepe Michael detto Maicol", 
+                    "Petruzzelli Pietro detto Piero", 
+                    "Salzo Antonio", 
+                    "Santorsola Stefania", 
+                    "Scamarcia Antonio Pasquale"
                 ];
 
-                const formatName = (name) => name.toLowerCase().replace(/ /g, '_');
+                // Funzione per pulire il nome dal "detto..." per il file
+                const formatFileName = (name) => {
+                    return name.split(" detto")[0].toLowerCase().replace(/ /g, '_');
+                };
+
+                // Funzione per formattare il nome visualizzato con il "detto..." in corsivo
+                const formatDisplayName = (name) => {
+                    if (name.includes(" detto ")) {
+                        const parts = name.split(" detto ");
+                        return `${parts[0]} <span class="italic font-medium text-slate-500 text-sm">detto ${parts[1]}</span>`;
+                    }
+                    return name;
+                };
 
                 document.write(candidati.map((nome, index) => `
                     <div class="bg-white p-5 rounded-2xl flex items-center justify-between border border-slate-100 hover:border-blue-300 transition-all shadow-sm group">
                         <div class="flex items-center gap-4">
-                            <span class="text-slate-300 font-black text-xl w-6">${index + 1}</span>
-                            <h4 class="font-bold text-slate-700 group-hover:text-blue-700 transition-colors">${nome}</h4>
+                            <span class="text-slate-300 font-black text-xl w-6 text-center">${index + 1}</span>
+                            <h4 class="font-bold text-slate-700 group-hover:text-blue-700 transition-colors leading-tight">
+                                ${formatDisplayName(nome)}
+                            </h4>
                         </div>
                         <div class="flex gap-2">
-                            <a href="/files/${formatName(nome)}_cv.pdf" 
+                            <a href="/files/${formatFileName(nome)}_cv.pdf" 
                                title="Scarica curriculum vitae" 
-                               class="p-2.5 bg-slate-50 hover:bg-blue-100 text-blue-600 rounded-lg transition-all" download>
-                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                               class="flex items-center gap-1.5 px-3 py-2 bg-slate-50 hover:bg-blue-100 text-blue-600 rounded-lg transition-all border border-slate-100 font-bold text-xs" download>
+                                <i data-lucide="file-text" class="w-4 h-4"></i> CV
                             </a>
-                            <a href="/files/${formatName(nome)}_ccg.pdf" 
+                            <a href="/files/${formatFileName(nome)}_ccg.pdf" 
                                title="Scarica certificato del casellario giudiziale" 
-                               class="p-2.5 bg-slate-50 hover:bg-slate-200 text-slate-700 rounded-lg transition-all" download>
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                               class="flex items-center gap-1.5 px-3 py-2 bg-slate-50 hover:bg-slate-200 text-slate-700 rounded-lg transition-all border border-slate-100 font-bold text-xs" download>
+                                <i data-lucide="gavel" class="w-4 h-4"></i> CCG
                             </a>
                         </div>
                     </div>
@@ -109,7 +136,6 @@
     </footer>
 
     <script>
-        // Inizializza le icone Lucide
         lucide.createIcons();
     </script>
 </body>
