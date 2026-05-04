@@ -3,318 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIMA CAPURSO GIUSI PEPE SINDACO</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>PRIMA CAPURSO - Trasparenza Elettorale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Reset e Stili Generali */
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            background-color: #f4f7f9;
-        }
-
-        /* Header e Branding */
-        header {
-            background-color: #e30613; /* Rosso istituzionale */
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 8px solid #0055a4; /* Blu istituzionale */
-        }
-
-        .logo-img {
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Layout Contenitore */
-        .container {
-            max-width: 1100px;
-            margin: -40px auto 40px;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 12px;
-        }
-
-        /* Sezione Sindaco */
-        .mayor-section {
-            background: #fdfdfd;
-            border: 1px solid #e1e4e8;
-            border-left: 10px solid #e30613;
-            padding: 30px;
-            margin-bottom: 50px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .mayor-info h2 {
-            margin: 0;
-            color: #0055a4;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
-
-        .mayor-label {
-            display: block;
-            color: #e30613;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        /* Pulsanti e Icone */
-        .docs-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            color: white;
-        }
-
-        .btn-cv { background-color: #e30613; }
-        .btn-cv:hover { background-color: #b3050f; transform: translateY(-2px); }
-        
-        .btn-ccg { background-color: #0055a4; }
-        .btn-ccg:hover { background-color: #003d7a; transform: translateY(-2px); }
-
-        .btn-action i {
-            margin-right: 10px;
-            font-size: 1.3rem;
-        }
-
-        /* Tabella Candidati */
-        h3 {
-            color: #333;
-            font-size: 1.5rem;
-            border-bottom: 3px solid #0055a4;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: #0055a4;
-            color: white;
-            text-align: left;
-            padding: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        td {
-            padding: 15px 18px;
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 1rem;
-        }
-
-        tr:nth-child(even) { background-color: #fafafa; }
-        tr:hover { background-color: #f1f5f9; }
-
-        .table-icon-link {
-            color: #555;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .table-icon-link:hover { color: #e30613; }
-
-        .material-icons {
-            vertical-align: middle;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px;
-            color: #888;
-            font-size: 0.85rem;
-            background: #f4f7f9;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .mayor-section { flex-direction: column; text-align: center; }
-            .docs-group { justify-content: center; }
-            h1 { font-size: 1.8rem; }
-            .container { padding: 20px; margin-top: -20px; }
-            th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
-                text-align: center;
-            }
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: #f0f4f8; }
+        .logo-gradient { background: linear-gradient(135deg, #0077c8 0%, #004a99 100%); }
     </style>
 </head>
-<body>
+<body class="text-slate-800">
 
-    <header>
-        <img src="logo.webp" alt="Logo Partito" class="logo-img">
-        <h1>PRIMA CAPURSO GIUSI PEPE SINDACO</h1>
+    <header class="logo-gradient text-white py-12 px-4 shadow-lg border-b-4 border-blue-900 text-center">
+        <img src="logo.webp" alt="Logo" class="w-48 h-48 rounded-full bg-white p-1 mx-auto mb-6 shadow-2xl border-4 border-white">
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">
+            PRIMA CAPURSO<br><span class="text-yellow-400">GIUSI PEPE SINDACO</span>
+        </h1>
+        <p class="mt-4 text-xl font-semibold opacity-90 uppercase">Elezioni Trasparenti 2025</p>
     </header>
 
-    <div class="container">
-        <div class="mayor-section">
-            <div class="mayor-info">
-                <span class="mayor-label">Candidato Sindaco</span>
-                <h2>Giusi Pepe</h2>
+    <main class="max-w-5xl mx-auto px-4 -mt-8 pb-20">
+        <section class="bg-white rounded-3xl p-8 shadow-xl mb-12 border-t-8 border-blue-600 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex items-center gap-6">
+                <div class="bg-blue-100 p-4 rounded-2xl"><i data-lucide="user" class="w-12 h-12 text-blue-700"></i></div>
+                <div>
+                    <span class="text-blue-600 font-bold text-sm uppercase">Candidato Sindaco</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900">Giusi Pepe</h2>
+                </div>
             </div>
-            <div class="docs-group">
-                <a href="pepe_giusi_cv.pdf" class="btn-action btn-cv">
-                    <i class="material-icons">description</i> SCARICA CV
+            <div class="flex gap-4">
+                <a href="/files/pepe_giusi_cv.pdf" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm flex items-center gap-2 hover:bg-blue-700 transition">
+                    <i data-lucide="file-text" class="w-5 h-5"></i> CV
                 </a>
-                <a href="pepe_giusi_ccg.pdf" class="btn-action btn-ccg">
-                    <i class="material-icons">gavel</i> SCARICA CCG
+                <a href="/files/pepe_giusi_ccg.pdf" class="bg-slate-800 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm flex items-center gap-2 hover:bg-slate-900 transition">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i> CCG
                 </a>
             </div>
+        </section>
+
+        <h3 class="text-2xl font-black uppercase mb-8 flex items-center gap-3"><i data-lucide="users" class="text-blue-600"></i> Lista Consiglieri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <script>
+                const candidati = ["Affatato Claudia Antonia", "Colella Nunzia detta Nancy", "De Filippo Laura", "Delmedico Luisiana", "Dicintio Giovanni", "Diprizio Piero", "Divella Ilaria", "Fiore Vincenzo", "Giannelli Giuseppe", "Macchia Quaranta Renata", "Pannarale Alessandro", "Pepe Michael detto Maicol", "Petruzzelli Pietro detto Piero", "Salzo Antonio", "Santorsola Stefania", "Scamarcia Antonio Pasquale"];
+                const format = (n) => n.toLowerCase().replace(/ /g, '_');
+                document.write(candidati.map((nome, i) => `
+                    <div class="bg-white p-5 rounded-2xl flex items-center justify-between border border-slate-100 hover:border-blue-300 transition shadow-sm group">
+                        <div class="flex items-center gap-4">
+                            <span class="text-slate-300 font-black text-xl w-6">${i + 1}</span>
+                            <h4 class="font-bold text-slate-700 group-hover:text-blue-700">${nome}</h4>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="/files/${format(nome)}_cv.pdf" class="p-2 bg-slate-50 hover:bg-blue-100 text-blue-600 rounded-lg transition"><i data-lucide="file-text" class="w-5 h-5"></i></a>
+                            <a href="/files/${format(nome)}_ccg.pdf" class="p-2 bg-slate-50 hover:bg-slate-200 text-slate-700 rounded-lg transition"><i data-lucide="shield-check" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                `).join(''));
+            </script>
         </div>
+    </main>
 
-        <h3>Candidati Consiglieri Comunali</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 50px;">N.</th>
-                    <th>COGNOME NOME</th>
-                    <th style="text-align:center; width: 100px;">CV</th>
-                    <th style="text-align:center; width: 100px;">CCG</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Affatato Claudia Antonia</td>
-                    <td align="center"><a href="affatato_claudia_antonia_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="affatato_claudia_antonia_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Colella Nunzia detta Nancy</td>
-                    <td align="center"><a href="colella_nunzia_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="colella_nunzia_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>De Filippo Laura</td>
-                    <td align="center"><a href="de_filippo_laura_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="de_filippo_laura_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Delmedico Luisiana</td>
-                    <td align="center"><a href="delmedico_luisiana_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="delmedico_luisiana_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Dicintio Giovanni</td>
-                    <td align="center"><a href="dicintio_giovanni_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="dicintio_giovanni_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Diprizio Piero</td>
-                    <td align="center"><a href="diprizio_piero_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="diprizio_piero_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Divella Ilaria</td>
-                    <td align="center"><a href="divella_ilaria_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="divella_ilaria_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Fiore Vincenzo</td>
-                    <td align="center"><a href="fiore_vincenzo_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="fiore_vincenzo_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Giannelli Giuseppe</td>
-                    <td align="center"><a href="giannelli_giuseppe_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="giannelli_giuseppe_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Macchia Quaranta Renata</td>
-                    <td align="center"><a href="macchia_quaranta_renata_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="macchia_quaranta_renata_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>Pannarale Alessandro</td>
-                    <td align="center"><a href="pannarale_alessandro_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="pannarale_alessandro_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>Pepe Michael detto Maicol</td>
-                    <td align="center"><a href="pepe_michael_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="pepe_michael_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>Petruzzelli Pietro detto Piero</td>
-                    <td align="center"><a href="petruzzelli_pietro_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="petruzzelli_pietro_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>Salzo Antonio</td>
-                    <td align="center"><a href="salzo_antonio_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="salzo_antonio_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>Santorsola Stefania</td>
-                    <td align="center"><a href="santorsola_stefania_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="santorsola_stefania_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-                <tr>
-                    <td>16</td>
-                    <td>Scamarcia Antonio Pasquale</td>
-                    <td align="center"><a href="scamarcia_antonio_pasquale_cv.pdf" class="table-icon-link" title="Scarica CV"><i class="material-icons">description</i></a></td>
-                    <td align="center"><a href="scamarcia_antonio_pasquale_ccg.pdf" class="table-icon-link" title="Scarica CCG"><i class="material-icons">gavel</i></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p class="text-white font-black text-lg uppercase mb-2">PRIMA CAPURSO GIUSI PEPE SINDACO</p>
+        <p class="text-xs opacity-50">Pubblicato ai sensi della Legge 3/2019</p>
+    </footer>
 
-    <div class="footer">
-        Pubblicazione ai sensi della Legge 3/2019 (Elezioni Trasparenti)<br>
-        <strong>Comitato Elettorale PRIMA CAPURSO GIUSI PEPE SINDACO</strong> &copy; 2025
-    </div>
-
+    <script>lucide.createIcons();</script>
 </body>
 </html>
