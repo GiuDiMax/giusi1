@@ -3,58 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIMA CAPURSO - Trasparenza Elettorale</title>
+    <title>Prima Capurso - Trasparenza Elettorale 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #f0f4f8; }
         .logo-gradient { background: linear-gradient(135deg, #0077c8 0%, #004a99 100%); }
+        .btn-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-hover:hover { transform: translateY(-2px) scale(1.02); }
+        /* Stile per rendere il sottotitolo più piccolo */
+        .subtitle-sindaco { font-size: 0.75em; font-weight: 700; }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <header class="logo-gradient text-white py-12 px-4 shadow-lg border-b-4 border-blue-900 text-center">
-        <img src="logo.webp" alt="Logo" class="w-48 h-48 rounded-full bg-white p-1 mx-auto mb-6 shadow-2xl border-4 border-white">
-        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">
-            PRIMA CAPURSO<br><span class="text-yellow-400">GIUSI PEPE SINDACO</span>
-        </h1>
-        <p class="mt-4 text-xl font-semibold opacity-90 uppercase">Elezioni Trasparenti 2025</p>
+    <header class="logo-gradient text-white py-12 px-4 shadow-lg border-b-4 border-blue-900">
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+            <img src="logo.webp" alt="Logo" class="w-44 h-44 rounded-full bg-white p-1 mb-6 shadow-2xl border-4 border-white">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-none">
+                Prima Capurso<br>
+                <span class="text-yellow-400 subtitle-sindaco italic">Giusi Pepe Sindaco</span>
+            </h1>
+            <p class="mt-4 text-sm font-bold opacity-80 tracking-[0.2em] uppercase">Elezioni Trasparenti 2025</p>
+        </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-4 -mt-8 pb-20">
-        <section class="bg-white rounded-3xl p-8 shadow-xl mb-12 border-t-8 border-blue-600 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="flex items-center gap-6">
-                <div class="bg-blue-100 p-4 rounded-2xl"><i data-lucide="user" class="w-12 h-12 text-blue-700"></i></div>
-                <div>
-                    <span class="text-blue-600 font-bold text-sm uppercase">Candidato Sindaco</span>
-                    <h2 class="text-4xl font-extrabold text-slate-900">Giusi Pepe</h2>
+        
+        <section class="bg-white rounded-3xl p-8 shadow-2xl mb-12 border-t-8 border-blue-600">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex items-center gap-6">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-tr from-yellow-400 to-blue-600 rounded-full blur opacity-25"></div>
+                        <img src="photo.webp" alt="Giusi Pepe" class="relative w-28 h-28 rounded-full object-cover border-4 border-white shadow-lg">
+                    </div>
+                    <div>
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Candidato Sindaco</span>
+                        <h2 class="text-4xl font-extrabold text-slate-900">Giusi Pepe</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="flex gap-4">
-                <a href="/files/pepe_giusi_cv.pdf" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm flex items-center gap-2 hover:bg-blue-700 transition">
-                    <i data-lucide="file-text" class="w-5 h-5"></i> CV
-                </a>
-                <a href="/files/pepe_giusi_ccg.pdf" class="bg-slate-800 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm flex items-center gap-2 hover:bg-slate-900 transition">
-                    <i data-lucide="shield-check" class="w-5 h-5"></i> CCG
-                </a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/files/pepe_giusi_cv.pdf" 
+                       title="Scarica curriculum vitae" 
+                       class="btn-hover flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
+                        <i data-lucide="file-text" class="w-5 h-5"></i> Scarica CV
+                    </a>
+                    <a href="/files/pepe_giusi_ccg.pdf" 
+                       title="Scarica certificato del casellario giudiziale" 
+                       class="btn-hover flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i> Scarica CCG
+                    </a>
+                </div>
             </div>
         </section>
 
-        <h3 class="text-2xl font-black uppercase mb-8 flex items-center gap-3"><i data-lucide="users" class="text-blue-600"></i> Lista Consiglieri</h3>
+        <div class="mb-8 flex items-center justify-between">
+            <h3 class="text-2xl font-black uppercase text-slate-900 flex items-center gap-3">
+                <i data-lucide="users" class="text-blue-600"></i> Lista Consiglieri
+            </h3>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <script>
-                const candidati = ["Affatato Claudia Antonia", "Colella Nunzia detta Nancy", "De Filippo Laura", "Delmedico Luisiana", "Dicintio Giovanni", "Diprizio Piero", "Divella Ilaria", "Fiore Vincenzo", "Giannelli Giuseppe", "Macchia Quaranta Renata", "Pannarale Alessandro", "Pepe Michael detto Maicol", "Petruzzelli Pietro detto Piero", "Salzo Antonio", "Santorsola Stefania", "Scamarcia Antonio Pasquale"];
-                const format = (n) => n.toLowerCase().replace(/ /g, '_');
-                document.write(candidati.map((nome, i) => `
-                    <div class="bg-white p-5 rounded-2xl flex items-center justify-between border border-slate-100 hover:border-blue-300 transition shadow-sm group">
+                const candidati = [
+                    "Affatato Claudia Antonia", "Colella Nunzia detta Nancy", "De Filippo Laura", 
+                    "Delmedico Luisiana", "Dicintio Giovanni", "Diprizio Piero", 
+                    "Divella Ilaria", "Fiore Vincenzo", "Giannelli Giuseppe", 
+                    "Macchia Quaranta Renata", "Pannarale Alessandro", "Pepe Michael detto Maicol", 
+                    "Petruzzelli Pietro detto Piero", "Salzo Antonio", "Santorsola Stefania", "Scamarcia Antonio Pasquale"
+                ];
+
+                const formatName = (name) => name.toLowerCase().replace(/ /g, '_');
+
+                document.write(candidati.map((nome, index) => `
+                    <div class="bg-white p-5 rounded-2xl flex items-center justify-between border border-slate-100 hover:border-blue-300 transition-all shadow-sm group">
                         <div class="flex items-center gap-4">
-                            <span class="text-slate-300 font-black text-xl w-6">${i + 1}</span>
-                            <h4 class="font-bold text-slate-700 group-hover:text-blue-700">${nome}</h4>
+                            <span class="text-slate-300 font-black text-xl w-6">${index + 1}</span>
+                            <h4 class="font-bold text-slate-700 group-hover:text-blue-700 transition-colors">${nome}</h4>
                         </div>
                         <div class="flex gap-2">
-                            <a href="/files/${format(nome)}_cv.pdf" class="p-2 bg-slate-50 hover:bg-blue-100 text-blue-600 rounded-lg transition"><i data-lucide="file-text" class="w-5 h-5"></i></a>
-                            <a href="/files/${format(nome)}_ccg.pdf" class="p-2 bg-slate-50 hover:bg-slate-200 text-slate-700 rounded-lg transition"><i data-lucide="shield-check" class="w-5 h-5"></i></a>
+                            <a href="/files/${formatName(nome)}_cv.pdf" 
+                               title="Scarica curriculum vitae" 
+                               class="p-2.5 bg-slate-50 hover:bg-blue-100 text-blue-600 rounded-lg transition-all" download>
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                            </a>
+                            <a href="/files/${formatName(nome)}_ccg.pdf" 
+                               title="Scarica certificato del casellario giudiziale" 
+                               class="p-2.5 bg-slate-50 hover:bg-slate-200 text-slate-700 rounded-lg transition-all" download>
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </a>
                         </div>
                     </div>
                 `).join(''));
@@ -63,10 +101,16 @@
     </main>
 
     <footer class="bg-slate-900 text-slate-400 py-12 text-center">
-        <p class="text-white font-black text-lg uppercase mb-2">PRIMA CAPURSO GIUSI PEPE SINDACO</p>
-        <p class="text-xs opacity-50">Pubblicato ai sensi della Legge 3/2019</p>
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="text-white font-bold text-lg mb-4">Prima Capurso - Giusi Pepe Sindaco</p>
+            <div class="w-12 h-1 border-t-2 border-blue-600 mx-auto mb-6"></div>
+            <p class="text-xs opacity-50 tracking-widest uppercase">Documentazione pubblicata ai sensi della Legge 3/2019</p>
+        </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        // Inizializza le icone Lucide
+        lucide.createIcons();
+    </script>
 </body>
 </html>
